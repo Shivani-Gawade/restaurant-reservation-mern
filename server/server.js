@@ -41,8 +41,7 @@ app.use((err, req, res, next) => {
 // DB + Server
 const PORT = process.env.PORT || 5000;
 const MONGO_URI =
-  process.env.MONGO_URI ||
-  "mongodb+srv://username:password@cluster.mongodb.net/restaurant";
+  process.env.MONGO_URI || "mongodb://127.0.0.1:27017/restaurant";
 
 mongoose
   .connect(MONGO_URI)
