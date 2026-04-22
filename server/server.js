@@ -25,9 +25,18 @@ app.use("/api/reservations", reservationRoutes);
 // ===============================
 // MongoDB Connection
 // ===============================
+// const PORT = process.env.PORT || 5000;
+// const MONGO_URI =
+//   process.env.MONGO_URI || "mongodb://127.0.0.1:27017/restaurant";
+
 const PORT = process.env.PORT || 5000;
-const MONGO_URI =
-  process.env.MONGO_URI || "mongodb://127.0.0.1:27017/restaurant";
+
+const MONGO_URI = process.env.MONGO_URI;
+
+if (!MONGO_URI) {
+  console.error("MONGO_URI is missing in environment variables");
+  process.exit(1);
+}
 
 mongoose
   .connect(MONGO_URI)
