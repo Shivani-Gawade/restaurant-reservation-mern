@@ -9,9 +9,9 @@ import { fileURLToPath } from "url";
 
 dotenv.config();
 
-const app = express(); // MUST come before using app
+const app = express();
 
-// Fix __dirname for ES modules
+// Fix __dirname (ES module support)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -22,23 +22,9 @@ app.use(express.json());
 // API Routes
 app.use("/api/reservations", reservationRoutes);
 
-// Serve frontend (VERY IMPORTANT for Render)
-app.use(express.static(path.join(__dirname, "../dist")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../dist", "index.html"));
-});
-
-// Error Handling
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({
-    message: "Internal Server Error",
-    error: err.message,
-  });
-});
-
-// DB + Server
+// ===============================
+// MongoDB Connection
+// ===============================
 const PORT = process.env.PORT || 5000;
 const MONGO_URI =
   process.env.MONGO_URI || "mongodb://127.0.0.1:27017/restaurant";
@@ -47,6 +33,7 @@ mongoose
   .connect(MONGO_URI)
   .then(() => {
     console.log("Connected to MongoDB");
+
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
@@ -54,3 +41,26 @@ mongoose
   .catch((err) => {
     console.error("MongoDB connection error:", err);
   });
+
+// ===============================
+// Serve Frontend (IMPORTANT FIX)
+// ===============================
+// Render puts build in /client/dist only if you build it
+const frontendPath = path.join(__dirname, "../client/dist");
+
+app.use(express.static(frontendPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
+});
+
+// ===============================
+// Error Handling
+// ===============================
+app.use((err, req, res, next) => {
+  console.error("SERVER ERROR:", err);
+  res.status(500).json({
+    message: "Internal Server Error",
+    error: err.message,
+  });
+});
