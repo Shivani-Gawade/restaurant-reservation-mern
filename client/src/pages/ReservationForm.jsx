@@ -23,7 +23,10 @@ function ReservationForm() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/reservations", formData);
+      await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/reservations`,
+        formData,
+      );
       setStatus({
         type: "success",
         message: "Reservation successful! We look forward to seeing you.",

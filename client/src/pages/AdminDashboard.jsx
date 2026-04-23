@@ -8,9 +8,13 @@ function AdminDashboard() {
 
   const fetchReservations = async () => {
     try {
-      const response = await axios.get("/api/reservations");
-      setReservations(response.data);
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/reservations`,
+      );
+      setReservations(Array.isArray(response.data) ? response.data : []);
     } catch (err) {
+      console.log(err);
+      setReservations([]);
       setError("Failed to fetch reservations");
     } finally {
       setLoading(false);
@@ -24,7 +28,9 @@ function AdminDashboard() {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to cancel this reservation?")) {
       try {
-        await axios.delete(`/api/reservations/${id}`);
+        await axios.delete(
+          `${import.meta.env.VITE_API_URL}/api/reservations/${id}`,
+        );
         setReservations(reservations.filter((res) => res._id !== id));
       } catch (err) {
         alert("Failed to cancel reservation");
