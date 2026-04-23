@@ -7,8 +7,11 @@ import reservationRoutes from "./routes/reservationRoutes.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
+import dotenv from "dotenv";
+
+// only use .env locally
 if (process.env.NODE_ENV !== "production") {
-  dotenv.config();
+  dotenv.config({ path: "./server/.env" });
 }
 
 const app = express();
