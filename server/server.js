@@ -7,7 +7,7 @@ import reservationRoutes from "./routes/reservationRoutes.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
-dotenv.config();
+dotenv.config({ path: "./server/.env" });
 
 const app = express();
 
