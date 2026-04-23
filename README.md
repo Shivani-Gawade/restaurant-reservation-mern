@@ -32,4 +32,4 @@ A complete MERN stack application for managing restaurant reservations.
 - `DELETE /api/reservations/:id` - Cancel a reservation
 
 ## Live Demo
-https://restaurant-reservation-mern-7dhf.onrender.com/admin
+https://restaurant-reservation-mern-7dhf.onrender.com/
