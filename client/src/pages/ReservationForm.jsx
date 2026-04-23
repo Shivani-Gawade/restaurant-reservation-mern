@@ -29,7 +29,7 @@ function ReservationForm() {
       );
       setStatus({
         type: "success",
-        message: "Reservation successful! We look forward to seeing you.",
+        message: "Reservation successful! We look forward to seeing you....",
       });
       setFormData({
         name: "",
