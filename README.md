@@ -30,3 +30,6 @@ A complete MERN stack application for managing restaurant reservations.
 - `GET /api/reservations` - Get all reservations
 - `POST /api/reservations` - Create a reservation
 - `DELETE /api/reservations/:id` - Cancel a reservation
+
+## Live Demo
+https://restaurant-reservation-mern-7dhf.onrender.com/admin
