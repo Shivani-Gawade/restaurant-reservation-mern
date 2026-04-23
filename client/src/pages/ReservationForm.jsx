@@ -14,6 +14,7 @@ function ReservationForm() {
 
   const [status, setStatus] = useState({ type: "", message: "" });
   const [loading, setLoading] = useState(false);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,10 +24,7 @@ function ReservationForm() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/reservations`,
-        formData,
-      );
+      await axios.post(`${API_URL}/api/reservations`, formData);
       setStatus({
         type: "success",
         message: "Reservation successful! We look forward to seeing you....",

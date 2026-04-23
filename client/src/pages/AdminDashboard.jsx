@@ -6,11 +6,11 @@ function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const fetchReservations = async () => {
     try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/reservations`,
-      );
+      const response = await axios.get(`${API_URL}/api/reservations`);
       setReservations(Array.isArray(response.data) ? response.data : []);
     } catch (err) {
       console.log(err);
