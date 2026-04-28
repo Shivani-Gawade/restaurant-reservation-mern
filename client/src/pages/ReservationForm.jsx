@@ -192,7 +192,10 @@ function ReservationForm() {
         <div className="flex flex-col items-center mt-6">
           <p className="text-gray-500 mb-2">Scan QR to open this page</p>
 
-          <QRCodeCanvas value="http://localhost:5173" size={140} />
+          <QRCodeCanvas
+            value="https://restaurant-reservation-mern-7dhf.onrender.com/"
+            size={140}
+          />
         </div>
       </form>
     </div>
