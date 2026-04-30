@@ -15,14 +15,11 @@ Developed as part of my **Full Stack Developer Internship at Webmobi 360**
 - Version Control: Git & GitHub
 
 ## ✨ Key Features
-- 🔐 User Authentication (Login/Register)
-- 🍴 Browse and search restaurants
 - 📅 Book table based on date & time slots
 - ❌ Cancel reservations
 - 🧑‍💼 Admin panel to manage restaurants & reservations
 - ⚡ Dynamic UI with React
 
-👉 Similar systems allow users to select time slots and manage bookings efficiently :contentReference[oaicite:0]{index=0}
 
 ## 📂 Project Structure
 
