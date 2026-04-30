@@ -1,35 +1,62 @@
-# MERN Stack Restaurant Reservation System
+# 🍽️ Restaurant Reservation System (MERN)
 
-A complete MERN stack application for managing restaurant reservations.
+A full-stack restaurant reservation web application built using the MERN stack.  
+This system allows users to explore restaurants and book tables based on availability, improving the overall dining experience.
 
-## Features
-- Real-time form validation
-- Create, view, and cancel reservations
-- Modern Tailwind CSS UI
-- RESTful API with Express & Mongoose
+## 🧑‍💻 Internship Project
+Developed as part of my **Full Stack Developer Internship at Webmobi 360**
 
-## Tech Stack
-- MongoDB (Mongoose)
-- Express.js
-- React.js (Vite + Tailwind CSS + React Router v6)
-- Node.js
+## 🛠️ Tech Stack
+- Frontend: React.js
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- State Management: Context API
+- API: RESTful APIs
+- Version Control: Git & GitHub
 
-## Setup
+## ✨ Key Features
+- 🔐 User Authentication (Login/Register)
+- 🍴 Browse and search restaurants
+- 📅 Book table based on date & time slots
+- ❌ Cancel reservations
+- 🧑‍💼 Admin panel to manage restaurants & reservations
+- ⚡ Dynamic UI with React
 
-1. Install dependencies for the root, client, and server:
-   ```bash
-   npm run install-all
-   ```
+👉 Similar systems allow users to select time slots and manage bookings efficiently :contentReference[oaicite:0]{index=0}
 
-2. Start the development server (runs both frontend & backend concurrently):
-   ```bash
-   npm run dev
-   ```
+## 📂 Project Structure
 
-## API Endpoints
-- `GET /api/reservations` - Get all reservations
-- `POST /api/reservations` - Create a reservation
-- `DELETE /api/reservations/:id` - Cancel a reservation
+client/ → React Frontend
+server/ → Node + Express Backend
 
-## Live Demo
-https://restaurant-reservation-mern-7dhf.onrender.com/
+
+## 🔗 Live Demo
+👉 https://restaurant-reservation-mern-7dhf.onrender.com
+
+## ⚙️ Installation & Setup
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/Shivani-Gawade/restaurant-reservation-mern.git
+
+cd restaurant-reservation-mern
+
+2. Backend Setup
+cd server
+npm install
+npm start
+
+3. Frontend Setup
+cd client
+npm install
+npm start
+
+4.Environment Variables
+
+Create a .env file in server:
+MONGO_URL=mongodb+srv://system:system123@cluster0.bxcwq86.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+```
+
+
+
+
